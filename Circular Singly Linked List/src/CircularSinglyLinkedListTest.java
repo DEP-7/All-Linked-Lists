@@ -4,7 +4,14 @@ public class CircularSinglyLinkedListTest {
     public static void main(String[] args) {
         CircularSinglyLinkedList circularSinglyLinkedList=new CircularSinglyLinkedList();
 
-        System.out.println("------------------------- Test for null linked list - start");
+        circularSinglyLinkedList.add(10);
+        circularSinglyLinkedList.print();
+        circularSinglyLinkedList.add(20);
+        circularSinglyLinkedList.print();
+        circularSinglyLinkedList.add(30);
+        circularSinglyLinkedList.print();
+
+       /* System.out.println("------------------------- Test for null linked list - start");
         System.out.print("Linked List Items : ");
         circularSinglyLinkedList.print();
         System.out.println("Linked List size = "+circularSinglyLinkedList.size());
@@ -58,6 +65,6 @@ public class CircularSinglyLinkedListTest {
         circularSinglyLinkedList.clear();
         System.out.print("Linked List Items after clear : ");
         circularSinglyLinkedList.print();
-        System.out.println("------------------------- Test clear() method - end");
+        System.out.println("------------------------- Test clear() method - end");*/
     }
 }

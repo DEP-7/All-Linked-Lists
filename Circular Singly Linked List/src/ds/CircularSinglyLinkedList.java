@@ -89,12 +89,11 @@ public class CircularSinglyLinkedList {
         int count = 0;
         Node tempNode = node;
         while (true) {
-            System.out.println("DC");
-            if (tempNode == null) {
-                return count;
-            }
             count++;
             tempNode = tempNode.getNode();
+            if (tempNode == node) {
+                return count;
+            }
         }
     }
 
