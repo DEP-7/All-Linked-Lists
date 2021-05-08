@@ -12,16 +12,16 @@ public class CircularSinglyLinkedList {
             throw new RuntimeException("Invalid index. Array size is " + size());
         }
         if (index == 0) {
-            Node tempNodeForTailItems = node;
-            node = new Node(number, tempNodeForTailItems);
+            Node tempNodeForRemainingItems = node;
+            node = new Node(number, tempNodeForRemainingItems);
         } else {
             Node tempNode = node;
             for (int i = 0; i < index - 1; i++) {
                 tempNode = tempNode.getNode();
             }
-            Node tempNodeForTailItems = tempNode.getNode();
+            Node tempNodeForRemainingItems = tempNode.getNode();
             tempNode.setNode(new Node(number));
-            tempNode.getNode().setNode(tempNodeForTailItems);
+            tempNode.getNode().setNode(tempNodeForRemainingItems);
         }
     }
 
@@ -34,15 +34,15 @@ public class CircularSinglyLinkedList {
             return;
         }
         if (index == 0) {
-            Node tempNodeForTailItems = node;
-            node = tempNodeForTailItems.getNode();
+            Node tempNodeForRemainingItems = node;
+            node = tempNodeForRemainingItems.getNode();
         } else {
             Node tempNode = node;
             for (int i = 0; i < index - 1; i++) {
                 tempNode = tempNode.getNode();
             }
-            Node tempNodeForTailItems = tempNode.getNode();
-            tempNode.setNode(tempNodeForTailItems.getNode());
+            Node tempNodeForRemainingItems = tempNode.getNode();
+            tempNode.setNode(tempNodeForRemainingItems.getNode());
         }
     }
 

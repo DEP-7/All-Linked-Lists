@@ -20,8 +20,7 @@ public class SinglyLinkedList {
                 tempNode = tempNode.getNode();
             }
             Node tempNodeForTailItems = tempNode.getNode();
-            tempNode.setNode(new Node(number));
-            tempNode.getNode().setNode(tempNodeForTailItems);
+            tempNode.setNode(new Node(number,tempNodeForTailItems));
         }
     }
 
