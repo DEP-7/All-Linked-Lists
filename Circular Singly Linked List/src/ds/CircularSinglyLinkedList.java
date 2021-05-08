@@ -1,6 +1,6 @@
 package ds;
 
-public class SinglyLinkedList {
+public class CircularSinglyLinkedList {
     private Node node;
 
     public void add(int number) {
