@@ -15,10 +15,11 @@ public class CircularSinglyLinkedList {
             if (node==null){
                 node = new Node(number, null);
                 node.setNode(node);
-            }/*else {
-                Node tempNodeForRemainingItems = node;
-                node = new Node(number, tempNodeForRemainingItems);
-            }*/
+            }else {
+                Node tempNodeForRemainingItems = node.getNode();
+                node.setNode(new Node(node.getNumber(),tempNodeForRemainingItems));
+                node .setNumber(number);
+            }
         } else {
             Node tempNode = node;
             for (int i = 0; i < index - 1; i++) {
@@ -29,7 +30,7 @@ public class CircularSinglyLinkedList {
         }
     }
 
-    public void remove(int index) {
+    /*public void remove(int index) {
         if (index >= size() || index < 0) {
             throw new RuntimeException("Invalid index. Array size is " + size());
         }
@@ -48,9 +49,9 @@ public class CircularSinglyLinkedList {
             Node tempNodeForRemainingItems = tempNode.getNode();
             tempNode.setNode(tempNodeForRemainingItems.getNode());
         }
-    }
+    }*/
 
-    public int get(int index) {
+    /*public int get(int index) {
         if (index >= size() || index < 0) {
             throw new RuntimeException("Invalid index. Array size is " + size());
         }
@@ -62,7 +63,7 @@ public class CircularSinglyLinkedList {
             tempNode = tempNode.getNode();
         }
         return tempNode.getNumber();
-    }
+    }*/
 
     public void print() {
         if (empty()) {
@@ -97,7 +98,7 @@ public class CircularSinglyLinkedList {
         }
     }
 
-    public boolean contains(int number) {
+    /*public boolean contains(int number) {
         if (empty()) {
             return false;
         }
@@ -109,7 +110,7 @@ public class CircularSinglyLinkedList {
             tempNode = tempNode.getNode();
         }
         return false;
-    }
+    }*/
 
     public boolean empty() {
         return node == null;

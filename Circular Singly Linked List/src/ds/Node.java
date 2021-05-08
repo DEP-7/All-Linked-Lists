@@ -13,6 +13,10 @@ public class Node {
         return number;
     }
 
+    public void setNumber(int number) {
+        this.number = number;
+    }
+
     public Node getNode() {
         return node;
     }
