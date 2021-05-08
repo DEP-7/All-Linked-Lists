@@ -4,10 +4,6 @@ public class Node {
     private int number;
     private Node node;
 
-    public Node(int number) {
-        this.number = number;
-    }
-
     public Node(int number, Node node) {
         this.number = number;
         this.node = node;

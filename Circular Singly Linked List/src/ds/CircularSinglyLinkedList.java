@@ -12,16 +12,20 @@ public class CircularSinglyLinkedList {
             throw new RuntimeException("Invalid index. Array size is " + size());
         }
         if (index == 0) {
-            Node tempNodeForRemainingItems = node;
-            node = new Node(number, tempNodeForRemainingItems);
+            if (node==null){
+                node = new Node(number, null);
+                node.setNode(node);
+            }/*else {
+                Node tempNodeForRemainingItems = node;
+                node = new Node(number, tempNodeForRemainingItems);
+            }*/
         } else {
             Node tempNode = node;
             for (int i = 0; i < index - 1; i++) {
                 tempNode = tempNode.getNode();
             }
             Node tempNodeForRemainingItems = tempNode.getNode();
-            tempNode.setNode(new Node(number));
-            tempNode.getNode().setNode(tempNodeForRemainingItems);
+            tempNode.setNode(new Node(number,tempNodeForRemainingItems));
         }
     }
 
@@ -85,6 +89,7 @@ public class CircularSinglyLinkedList {
         int count = 0;
         Node tempNode = node;
         while (true) {
+            System.out.println("DC");
             if (tempNode == null) {
                 return count;
             }
