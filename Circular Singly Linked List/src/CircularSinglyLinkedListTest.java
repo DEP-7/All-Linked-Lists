@@ -18,6 +18,14 @@ public class CircularSinglyLinkedListTest {
         circularSinglyLinkedList.print();
         circularSinglyLinkedList.add(0,2);
         circularSinglyLinkedList.print();
+        circularSinglyLinkedList.add(0,0);
+        circularSinglyLinkedList.print();
+        circularSinglyLinkedList.remove(1);
+        circularSinglyLinkedList.print();
+        circularSinglyLinkedList.remove(0);
+        circularSinglyLinkedList.print();
+        circularSinglyLinkedList.remove(5);
+        circularSinglyLinkedList.print();
 
        /* System.out.println("------------------------- Test for null linked list - start");
         System.out.print("Linked List Items : ");

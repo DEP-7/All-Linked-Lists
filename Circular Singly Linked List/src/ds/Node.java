@@ -2,11 +2,11 @@ package ds;
 
 public class Node {
     private int number;
-    private Node node;
+    private Node next;
 
-    public Node(int number, Node node) {
+    public Node(int number, Node next) {
         this.number = number;
-        this.node = node;
+        this.next = next;
     }
 
     public int getNumber() {
@@ -17,11 +17,11 @@ public class Node {
         this.number = number;
     }
 
-    public Node getNode() {
-        return node;
+    public Node getNext() {
+        return next;
     }
 
-    public void setNode(Node node) {
-        this.node = node;
+    public void setNext(Node next) {
+        this.next = next;
     }
 }

@@ -1,7 +1,7 @@
 package ds;
 
 public class CircularSinglyLinkedList {
-    private Node node;
+    private Node head;
 
     public void add(int number) {
         add(size(), number);
@@ -12,25 +12,25 @@ public class CircularSinglyLinkedList {
             throw new RuntimeException("Invalid index. Array size is " + size());
         }
         if (index == 0) {
-            if (node==null){
-                node = new Node(number, null);
-                node.setNode(node);
+            if (head==null){
+                head = new Node(number, null);
+                head.setNext(head);
             }else {
-                Node tempNodeForRemainingItems = node.getNode();
-                node.setNode(new Node(node.getNumber(),tempNodeForRemainingItems));
-                node .setNumber(number);
+                Node tempNodeForRemainingItems = head.getNext();
+                head.setNext(new Node(head.getNumber(),tempNodeForRemainingItems));
+                head .setNumber(number);
             }
         } else {
-            Node tempNode = node;
+            Node tempNode = head;
             for (int i = 0; i < index - 1; i++) {
-                tempNode = tempNode.getNode();
+                tempNode = tempNode.getNext();
             }
-            Node tempNodeForRemainingItems = tempNode.getNode();
-            tempNode.setNode(new Node(number,tempNodeForRemainingItems));
+            Node tempNodeForRemainingItems = tempNode.getNext();
+            tempNode.setNext(new Node(number,tempNodeForRemainingItems));
         }
     }
 
-    /*public void remove(int index) {
+    public void remove(int index) {
         if (index >= size() || index < 0) {
             throw new RuntimeException("Invalid index. Array size is " + size());
         }
@@ -39,17 +39,23 @@ public class CircularSinglyLinkedList {
             return;
         }
         if (index == 0) {
-            Node tempNodeForRemainingItems = node;
-            node = tempNodeForRemainingItems.getNode();
+            head.setNumber(head.getNext().getNumber());
+            remove(index+1);
         } else {
-            Node tempNode = node;
+            Node tempNode = head;
             for (int i = 0; i < index - 1; i++) {
-                tempNode = tempNode.getNode();
+                tempNode = tempNode.getNext();
             }
-            Node tempNodeForRemainingItems = tempNode.getNode();
-            tempNode.setNode(tempNodeForRemainingItems.getNode());
+            Node tempNodeForRemainingItems = tempNode.getNext();
+            tempNode.setNext(tempNodeForRemainingItems.getNext());
         }
-    }*/
+        Node temp=head;
+        for (int i = 0; i < 10; i++) {
+            System.out.print(temp.getNumber()+"  -  ");
+            temp=temp.getNext();
+        }
+        System.out.println();
+    }
 
     /*public int get(int index) {
         if (index >= size() || index < 0) {
@@ -70,17 +76,17 @@ public class CircularSinglyLinkedList {
             System.out.println("[]");
         } else {
             System.out.print("[");
-            Node tempNode = node;
+            Node tempNode = head;
             for (int i = 0; i < size(); i++) {
                 System.out.print(tempNode.getNumber() + ", ");
-                tempNode = tempNode.getNode();
+                tempNode = tempNode.getNext();
             }
             System.out.println("\b\b]");
         }
     }
 
     public void clear() {
-        node = null;
+        head = null;
     }
 
     public int size() {
@@ -88,11 +94,11 @@ public class CircularSinglyLinkedList {
             return 0;
         }
         int count = 0;
-        Node tempNode = node;
+        Node tempNode = head;
         while (true) {
             count++;
-            tempNode = tempNode.getNode();
-            if (tempNode == node) {
+            tempNode = tempNode.getNext();
+            if (tempNode == head) {
                 return count;
             }
         }
@@ -113,6 +119,6 @@ public class CircularSinglyLinkedList {
     }*/
 
     public boolean empty() {
-        return node == null;
+        return head == null;
     }
 }
