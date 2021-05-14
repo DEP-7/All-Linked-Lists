@@ -2,22 +2,36 @@ package ds;
 
 public class Node {
     private int number;
-    private Node node;
+    private Node next;
+    private Node previous;
 
-    public Node(int number, Node node) {
+    public Node(int number, Node next, Node previous) {
         this.number = number;
-        this.node = node;
+        this.next = next;
+        this.previous = previous;
     }
 
     public int getNumber() {
         return number;
     }
 
-    public Node getNode() {
-        return node;
+    public void setNumber(int number) {
+        this.number = number;
     }
 
-    public void setNode(Node node) {
-        this.node = node;
+    public Node getNext() {
+        return next;
+    }
+
+    public void setNext(Node next) {
+        this.next = next;
+    }
+
+    public Node getPrevious() {
+        return previous;
+    }
+
+    public void setPrevious(Node previous) {
+        this.previous = previous;
     }
 }
