@@ -16,6 +16,12 @@ public class DoublyLinkedListTest {
         numList.print();
         numList.add(0,5);
         numList.print();
+        numList.remove(0);
+        numList.print();
+        numList.remove(3);
+        numList.print();
+        numList.remove(3);
+        numList.print();
 
         /*System.out.println("------------------------- Test for null linked list - start");
         System.out.print("Linked List Items : ");

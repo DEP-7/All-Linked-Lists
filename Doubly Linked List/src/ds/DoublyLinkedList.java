@@ -41,6 +41,7 @@ public class DoublyLinkedList {
         if (index == 0) {
             Node tempNodeForTailItems = head;
             head = tempNodeForTailItems.getNext();
+            head.setPrevious(null);
         } else {
             Node tempNode = head;
             for (int i = 0; i < index - 1; i++) {
@@ -48,6 +49,9 @@ public class DoublyLinkedList {
             }
             Node tempNodeForTailItems = tempNode.getNext();
             tempNode.setNext(tempNodeForTailItems.getNext());
+            if (tempNodeForTailItems.getNext() != null) {
+                tempNodeForTailItems.getNext().setPrevious(tempNode);
+            }
         }
     }
 
@@ -71,21 +75,21 @@ public class DoublyLinkedList {
         } else {
             System.out.print("["); //print forward using next
             Node tempNode = head;
-            Node tempNodeForBack = null;
+            //Node tempNodeForBack = null;
             for (int i = 0; i < size(); i++) {
                 System.out.print(tempNode.getNumber() + ", ");
-                tempNodeForBack = tempNode;
+                //tempNodeForBack = tempNode;
                 tempNode = tempNode.getNext();
             }
             System.out.println("\b\b]");
 
             //print backward using previous to check the backward link continuity
-            System.out.print("[");
+            /*System.out.print("[");
             for (int i = 0; i < size(); i++) {
                 System.out.print(tempNodeForBack.getNumber() + ", ");
                 tempNodeForBack = tempNodeForBack.getPrevious();
             }
-            System.out.println("\b\b]");
+            System.out.println("\b\b]");*/
         }
     }
 
