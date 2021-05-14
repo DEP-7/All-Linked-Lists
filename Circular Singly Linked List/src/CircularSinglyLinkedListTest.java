@@ -2,30 +2,33 @@ import ds.CircularSinglyLinkedList;
 
 public class CircularSinglyLinkedListTest {
     public static void main(String[] args) {
-        CircularSinglyLinkedList circularSinglyLinkedList=new CircularSinglyLinkedList();
+        CircularSinglyLinkedList numList = new CircularSinglyLinkedList();
 
-        circularSinglyLinkedList.add(10);
-        circularSinglyLinkedList.print();
-        circularSinglyLinkedList.add(20);
-        circularSinglyLinkedList.print();
-        circularSinglyLinkedList.add(30);
-        circularSinglyLinkedList.print();
-        circularSinglyLinkedList.add(40);
-        circularSinglyLinkedList.print();
-        circularSinglyLinkedList.add(2,25);
-        circularSinglyLinkedList.print();
-        circularSinglyLinkedList.add(5,45);
-        circularSinglyLinkedList.print();
-        circularSinglyLinkedList.add(0,2);
-        circularSinglyLinkedList.print();
-        circularSinglyLinkedList.add(0,0);
-        circularSinglyLinkedList.print();
-        circularSinglyLinkedList.remove(1);
-        circularSinglyLinkedList.print();
-        circularSinglyLinkedList.remove(0);
-        circularSinglyLinkedList.print();
-        circularSinglyLinkedList.remove(5);
-        circularSinglyLinkedList.print();
+        numList.add(10);
+        numList.print();
+        numList.add(20);
+        numList.print();
+        numList.add(30);
+        numList.print();
+        numList.add(40);
+        numList.print();
+        numList.add(2, 25);
+        numList.print();
+        numList.add(5, 45);
+        numList.print();
+        numList.add(0, 2);
+        numList.print();
+        numList.add(0, 0);
+        numList.print();
+        numList.remove(1);
+        numList.print();
+        numList.remove(0);
+        numList.print();
+        numList.remove(5);
+        numList.print();
+        System.out.println(numList.get(0));
+        System.out.println(numList.get(1));
+        System.out.println(numList.get(numList.size()-1));
 
        /* System.out.println("------------------------- Test for null linked list - start");
         System.out.print("Linked List Items : ");

@@ -12,13 +12,13 @@ public class CircularSinglyLinkedList {
             throw new RuntimeException("Invalid index. Array size is " + size());
         }
         if (index == 0) {
-            if (head==null){
+            if (head == null) {
                 head = new Node(number, null);
                 head.setNext(head);
-            }else {
+            } else {
                 Node tempNodeForRemainingItems = head.getNext();
-                head.setNext(new Node(head.getNumber(),tempNodeForRemainingItems));
-                head .setNumber(number);
+                head.setNext(new Node(head.getNumber(), tempNodeForRemainingItems));
+                head.setNumber(number);
             }
         } else {
             Node tempNode = head;
@@ -26,7 +26,7 @@ public class CircularSinglyLinkedList {
                 tempNode = tempNode.getNext();
             }
             Node tempNodeForRemainingItems = tempNode.getNext();
-            tempNode.setNext(new Node(number,tempNodeForRemainingItems));
+            tempNode.setNext(new Node(number, tempNodeForRemainingItems));
         }
     }
 
@@ -40,7 +40,7 @@ public class CircularSinglyLinkedList {
         }
         if (index == 0) {
             head.setNumber(head.getNext().getNumber());
-            remove(index+1);
+            remove(index + 1);
         } else {
             Node tempNode = head;
             for (int i = 0; i < index - 1; i++) {
@@ -49,27 +49,21 @@ public class CircularSinglyLinkedList {
             Node tempNodeForRemainingItems = tempNode.getNext();
             tempNode.setNext(tempNodeForRemainingItems.getNext());
         }
-        Node temp=head;
-        for (int i = 0; i < 10; i++) {
-            System.out.print(temp.getNumber()+"  -  ");
-            temp=temp.getNext();
-        }
-        System.out.println();
     }
 
-    /*public int get(int index) {
+    public int get(int index) {
         if (index >= size() || index < 0) {
             throw new RuntimeException("Invalid index. Array size is " + size());
         }
         if (index == 0) {
-            return node.getNumber();
+            return head.getNumber();
         }
-        Node tempNode = node;
+        Node tempNode = head;
         for (int i = 0; i < index; i++) {
-            tempNode = tempNode.getNode();
+            tempNode = tempNode.getNext();
         }
         return tempNode.getNumber();
-    }*/
+    }
 
     public void print() {
         if (empty()) {
