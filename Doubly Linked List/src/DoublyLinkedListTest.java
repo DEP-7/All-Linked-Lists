@@ -12,6 +12,7 @@ public class DoublyLinkedListTest {
         System.out.println("Is empty : "+ numList.empty());
         //System.out.println("Get 1st item : "+singlyLinkedList.get(0));
         //singlyLinkedList.remove(0);
+        //numList.add(8,25);
         System.out.println("------------------------- Test for null linked list - end\n");
 
         System.out.println("------------------------- Test adding to linked list - start");
