@@ -4,26 +4,7 @@ public class DoublyLinkedListTest {
     public static void main(String[] args) {
         DoublyLinkedList numList =new DoublyLinkedList();
 
-        numList.add(10);
-        numList.print();
-        numList.add(20);
-        numList.print();
-        numList.add(30);
-        numList.print();
-        numList.add(3,40);
-        numList.print();
-        numList.add(3,35);
-        numList.print();
-        numList.add(0,5);
-        numList.print();
-        numList.remove(0);
-        numList.print();
-        numList.remove(3);
-        numList.print();
-        numList.remove(3);
-        numList.print();
-
-        /*System.out.println("------------------------- Test for null linked list - start");
+        System.out.println("------------------------- Test for null linked list - start");
         System.out.print("Linked List Items : ");
         numList.print();
         System.out.println("Linked List size = "+ numList.size());
@@ -45,10 +26,13 @@ public class DoublyLinkedListTest {
         numList.add(30);
         System.out.print("Linked List Items : ");
         numList.print();
-        numList.add(0,5);
+        numList.add(0,5);                    // Add to first element
         System.out.print("Linked List Items : ");
         numList.print();
-        numList.add(3,25);
+        numList.add(numList.size(),40);            // Add to last element
+        System.out.print("Linked List Items : ");
+        numList.print();
+        numList.add(3,25);                   // Add to middle element
         System.out.print("Linked List Items : ");
         numList.print();
         System.out.println("Linked List size = "+ numList.size());
@@ -63,10 +47,13 @@ public class DoublyLinkedListTest {
         System.out.println("------------------------- Test remove from linked list - start");
         System.out.print("Linked List Items : ");
         numList.print();
-        numList.remove(3);
+        numList.remove(3);                           // Remove middle element
         System.out.print("Linked List Items : ");
         numList.print();
-        numList.remove(0);
+        numList.remove(0);                           // Remove first element
+        System.out.print("Linked List Items : ");
+        numList.print();
+        numList.remove(numList.size()-1);            // Remove last element
         System.out.print("Linked List Items : ");
         numList.print();
         System.out.println("------------------------- Test remove from linked list - end\n");
@@ -77,6 +64,6 @@ public class DoublyLinkedListTest {
         numList.clear();
         System.out.print("Linked List Items after clear : ");
         numList.print();
-        System.out.println("------------------------- Test clear() method - end");*/
+        System.out.println("------------------------- Test clear() method - end");
     }
 }
