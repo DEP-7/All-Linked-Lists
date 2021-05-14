@@ -98,19 +98,19 @@ public class CircularSinglyLinkedList {
         }
     }
 
-    /*public boolean contains(int number) {
+    public boolean contains(int number) {
         if (empty()) {
             return false;
         }
-        Node tempNode = node;
+        Node tempNode = head;
         for (int i = 0; i < size(); i++) {
             if (tempNode.getNumber() == number) {
                 return true;
             }
-            tempNode = tempNode.getNode();
+            tempNode = tempNode.getNext();
         }
         return false;
-    }*/
+    }
 
     public boolean empty() {
         return head == null;

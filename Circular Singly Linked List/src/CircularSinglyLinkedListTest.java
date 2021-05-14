@@ -29,6 +29,9 @@ public class CircularSinglyLinkedListTest {
         System.out.println(numList.get(0));
         System.out.println(numList.get(1));
         System.out.println(numList.get(numList.size()-1));
+        System.out.println(numList.contains(40));
+        System.out.println(numList.contains(25));
+        System.out.println(numList.contains(2));
 
        /* System.out.println("------------------------- Test for null linked list - start");
         System.out.print("Linked List Items : ");
